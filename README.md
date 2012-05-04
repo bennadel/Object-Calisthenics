@@ -1,5 +1,5 @@
 
-# Object Calisthentics 
+# Object Calisthenics 
 
 This is my attempt at executing the Object Calisthenics exercise in JavaScript 
 as described by Jeff Bay in this PDF, originally from the ThoughtWorks Anthology
