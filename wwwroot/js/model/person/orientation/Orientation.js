@@ -17,7 +17,7 @@ define(
 			isAttractedTo: function( person ){
 			
 				return(
-					this._preference.isSexuallyAppealing( person )
+					this._preference.prefers( person )
 				);
 			
 			},

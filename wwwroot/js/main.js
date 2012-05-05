@@ -45,6 +45,7 @@ require(
 	
 		console.log( "Smallest thing working!" );
 		
+		
 		var factory = new Factory();
 		
 		var m = factory.createMale();
@@ -55,7 +56,6 @@ require(
 		
 		console.log( m.isAttractedTo( f ) );
 		console.log( f.isAttractedTo( m ) );
-		
 		
 	}
 );

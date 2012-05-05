@@ -18,7 +18,7 @@ define(
 		NonPreference.prototype = Object.create( Preference ); 
 		
 		
-		NonPreference.prototype.isSexuallyAppealing = function( person ){
+		NonPreference.prototype.prefers = function( person ){
 			
 			// Gender is irrelevant.
 			return( true );

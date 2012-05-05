@@ -3,32 +3,30 @@
 define(
 	[
 		"model/person/Name",
-		"model/person/Collection",
 		"model/person/Person",
 		"model/person/orientation/FemaleIdentity",
 		"model/person/orientation/FemalePreference",
 		"model/person/orientation/MaleIdentity",
 		"model/person/orientation/MalePreference",
 		"model/person/orientation/Orientation",
-		"model/util/Collection"
+		"model/util/RandomAccessCollection"
 	],
 	function( 
-		Name, 
-		PersonCollection,
+		Name,
 		Person,
 		FemaleIdentity,
 		FemalePreference,
 		MaleIdentity,
 		MalePreference,
 		Orientation,
-		Collection 
+		RandomAccessCollection 
 		){
 	
 	
 		function Factory(){
 			
-			this._maleNames = new Collection( "Arnold", "Vin", "Sly", "James", "Robert" );
-			this._femaleNames = new Collection( "Tricia", "Sarah", "Joanna", "Kim", "Stacy" );
+			this._maleNames = new RandomAccessCollection( "Arnold", "Vin", "Sly", "James", "Robert" );
+			this._femaleNames = new RandomAccessCollection( "Tricia", "Sarah", "Joanna", "Kim", "Stacy" );
 			
 		}
 		
@@ -42,8 +40,6 @@ define(
 				var preference = new MalePreference();
 				var orientation = new Orientation( identity, preference );
 				var person = new Person( name, orientation );
-			
-				console.log( preference );
 			
 				return( person );
 				

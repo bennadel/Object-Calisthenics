@@ -1,20 +1,20 @@
 
 // Define class requirments and cosntructor.
 define(
-	[],
-	function(){
+	[
+		"../util/Collection"
+	],
+	function( Collection ){
 	
 	
-		function Preference(){
-			// ...
+		function PersonCollection(){
+			
+			Collection.apply( this, arguments )
+			
 		}
 		
 		
-		Preference.prototype.prefers = function( person ){
-		
-			throw( new Error( "AbstractMethod" ) );
-		
-		}
+		PersonCollection.prototype = Object.create( Collection.prototype );
 		
 		
 		// -------------------------------------------------- //
@@ -22,8 +22,8 @@ define(
 		
 		
 		// Return constructor definition.
-		return( Preference );
-		
+		return( PersonCollection );
+	
 	
 	}
 );

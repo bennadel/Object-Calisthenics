@@ -18,7 +18,7 @@ define(
 		FemalePreference.prototype = Object.create( Preference ); 
 		
 		
-		FemalePreference.prototype.isSexuallyAppealing = function( person ){
+		FemalePreference.prototype.prefers = function( person ){
 			
 			return( person.isFemale() );
 			

@@ -13,6 +13,12 @@ define(
 		
 		
 		Collection.prototype = {
+			
+			addAll: function(){
+				
+				
+				
+			},
 
 			get: function( index ){
 			
@@ -21,17 +27,6 @@ define(
 			},
 			
 			
-			getRandom: function(){
-
-				return(
-					this.get(
-						this.randRange( 0, this._values.length )
-					)
-				);
-				
-			},
-
-
 			pop: function(){
 			
 				return( 
@@ -50,12 +45,10 @@ define(
 			},
 			
 			
-			randRange: function( low, highExclusive ){
-			
-				return(
-					Math.floor( (highExclusive - low) * Math.random() ) + low
-				);
-			
+			size: function(){
+				
+				return( this._values.length );
+				
 			}
 			
 		};
