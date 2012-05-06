@@ -15,6 +15,23 @@ define(
 		
 		Match.prototype = {
 			
+			equals: function( match ){
+
+				return(
+						(
+							(this._person1 === match.getPerson1()) &&
+							(this._person2 === match.getPerson2())
+						)
+					||
+						(
+							(this._person2 === match.getPerson1()) &&
+							(this._person1 === match.getPerson2())
+						)
+				);
+
+			},
+
+			
 			getPerson1: function(){
 				
 				return( this._person1 );
@@ -28,7 +45,7 @@ define(
 				
 			},
 			
-			
+		
 			isPromising: function(){
 				
 				return(
@@ -36,7 +53,19 @@ define(
 					this._person2.isAttractedTo( this._person1 )
 				);
 				
+			},
+			
+			
+			toString: function(){
+
+				return(
+					this._person1.toString() +
+					" :: " +
+					this._person2.toString()
+				);
+
 			}
+		
 						
 		};
 		

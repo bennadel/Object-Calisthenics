@@ -2,7 +2,7 @@
 // Define class requirments and cosntructor.
 define(
 	[
-		"../util/Collection"
+		"model/util/Collection"
 	],
 	function( Collection ){
 	
@@ -17,6 +17,36 @@ define(
 		MatchCollection.prototype = Object.create( Collection.prototype );
 		
 		
+		MatchCollection.prototype.exists = function( match ){
+			
+			for (var i = 0 ; i < this.size() ; i++){
+				
+				if (this.get( i ).equals( match )){
+					
+					return( true );
+					
+				}
+				
+			}
+			
+			return( false );
+			
+		};
+		
+	
+		MatchCollection.prototype.push = function( match ){
+
+			if (this.exists( match )){
+				
+				return;
+				
+			}
+			
+			Collection.prototype.push.call( this, match );
+
+		};
+
+	
 		MatchCollection.prototype.removeBadMatches = function(){
 			
 			for (var i = this._values.length - 1 ; i >= 0 ; i--){
@@ -37,8 +67,16 @@ define(
 			}
 
 		};
-
 		
+	
+		MatchCollection.prototype.toString = function( index ){
+
+			return( 
+				this.get( index ).toString()
+			);
+
+		};
+
 		
 		// -------------------------------------------------- //
 		// -------------------------------------------------- //

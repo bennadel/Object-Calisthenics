@@ -10,11 +10,18 @@ define(
 		}
 		
 		
+		Preference.prototype.abbreviation = function(){
+		
+			throw( new Error( "AbstractMethod" ) );
+		
+		};
+		
+		
 		Preference.prototype.prefers = function( person ){
 		
 			throw( new Error( "AbstractMethod" ) );
 		
-		}
+		};
 		
 		
 		// -------------------------------------------------- //

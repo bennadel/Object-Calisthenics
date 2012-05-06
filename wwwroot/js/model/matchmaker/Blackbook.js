@@ -2,7 +2,7 @@
 // Define class requirments and cosntructor.
 define(
 	[
-		"./util/Collection"
+		"model/util/Collection"
 	],
 	function( Collection ){
 	

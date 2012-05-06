@@ -2,8 +2,8 @@
 // Define class requirments and cosntructor.
 define(
 	[ 
-		"./orientation/FemaleIdentity",
-		"./orientation/MaleIdentity"
+		"model/person/orientation/FemaleIdentity",
+		"model/person/orientation/MaleIdentity"
 	],
 	function( FemaleIdentity, MaleIdentity ){
 	
@@ -18,6 +18,15 @@ define(
 		
 		Person.prototype = {
 			
+			getPersonalAd: function(){
+				
+				return(
+					this._orientation.getAbbreviation()
+				);
+				
+			},
+			
+			
 			isAttractedTo: function( otherPerson ){
 				
 				return(
@@ -25,6 +34,7 @@ define(
 				);
 				
 			},
+			
 			
 			isFemale: function(){
 			
@@ -34,6 +44,7 @@ define(
 			
 			},
 			
+			
 			isMale: function(){
 			
 				return(
@@ -42,9 +53,10 @@ define(
 			
 			},
 			
+			
 			toString: function(){
 			
-				return( "[Person " + this._name.toString() + "]" );
+				return( "[Person " + this._name.toString() + " - " + this.getPersonalAd() + "]" );
 				
 			}
 		

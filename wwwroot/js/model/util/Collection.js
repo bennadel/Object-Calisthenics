@@ -14,12 +14,6 @@ define(
 		
 		Collection.prototype = {
 			
-			addAll: function(){
-				
-				
-				
-			},
-
 			get: function( index ){
 			
 				return( this._values[ index ] );

@@ -14,6 +14,17 @@ define(
 		
 		Orientation.prototype = {
 			
+			getAbbreviation: function(){
+				
+				return(
+					this._identity.abbreviation() + 
+					"<=>" +
+					this._preference.abbreviation()
+				);
+				
+			},
+			
+			
 			isAttractedTo: function( person ){
 			
 				return(
@@ -21,6 +32,7 @@ define(
 				);
 			
 			},
+			
 			
 			identifiesAs: function( Identity ){
 

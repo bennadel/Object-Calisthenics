@@ -2,10 +2,10 @@
 // Define class requirments and cosntructor.
 define(
 	[
-		"./match/MatchCollection",
-		"./match/Match"
+		"model/matchmaker/MatchCollection",
+		"model/matchmaker/Match"
 	],
-	function( MatchCollection ){
+	function( MatchCollection, Match ){
 	
 	
 		function MatchMaker( blackbook ){
@@ -24,22 +24,35 @@ define(
 			},
 			
 			
+			gatherMatches: function( person, matches ){
+				
+				for (var i = 0 ; i < this._blackbook.size() ; i++){
+					
+					var possibleMatch = this._blackbook.get( i );
+					
+					if (person === possibleMatch ){
+						continue;
+					}
+					
+					matches.push(
+						new Match( person, possibleMatch )
+					);
+					
+				}
+			
+			},
+			
+			
 			suggestMatches: function(){
 				
 				var matches = new MatchCollection();
 				
-				for (var p1 = 0 ; p1 < this._blackbook.size() ; p1++){
+				for (var i = 0 ; i < this._blackbook.size() ; i++){
 					
-					for (var p2 = 0 ; p2 < this._blackbook.size() ; p2++){
-						
-						matches.push(
-							new Match(
-								this._blackbook.get( p1 ),
-								this._blackbook.get( p2 )
-							)
-						);
-						
-					}
+					this.gatherMatches(
+						this._blackbook.get( i ),
+						matches
+					);
 					
 				}
 				

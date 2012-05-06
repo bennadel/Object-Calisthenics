@@ -10,6 +10,13 @@ define(
 		}
 		
 		
+		Identity.prototype.abbreviation = function(){
+
+			throw( new Error( "AbstractMethod" ) );
+
+		};
+	
+	
 		// -------------------------------------------------- //
 		// -------------------------------------------------- //
 		

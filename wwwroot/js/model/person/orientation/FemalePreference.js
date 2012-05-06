@@ -2,7 +2,7 @@
 // Define class requirments and cosntructor.
 define(
 	[
-		"./Preference"
+		"model/person/orientation/Preference"
 	],
 	function( Preference ){
 	
@@ -17,6 +17,12 @@ define(
 		// Extend Identity.
 		FemalePreference.prototype = Object.create( Preference ); 
 		
+		
+		FemalePreference.prototype.abbreviation = function(){
+
+			return( "F" );
+
+		};
 		
 		FemalePreference.prototype.prefers = function( person ){
 			

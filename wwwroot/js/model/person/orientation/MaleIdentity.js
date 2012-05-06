@@ -2,7 +2,7 @@
 // Define class requirments and cosntructor.
 define(
 	[
-		"./Identity"
+		"model/person/orientation/Identity"
 	],
 	function( Identity ){
 	
@@ -16,6 +16,13 @@ define(
 		
 		// Extend Identity.
 		MaleIdentity.prototype = Object.create( Identity ); 
+		
+		
+		MaleIdentity.prototype.abbreviation = function(){
+			
+			return( "M" );
+			
+		};
 		
 		
 		// -------------------------------------------------- //
