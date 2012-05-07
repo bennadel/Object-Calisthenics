@@ -16,6 +16,10 @@ if (!Object.hasOwnProperty( "create" )){
 }
 
 
+// ---------------------------------------------------------- //
+// ---------------------------------------------------------- //
+
+
 // Define the paths to be used in the script mappings. Also, define
 // the named modules for any libraries that are AMD compliant.
 require.config({
@@ -35,6 +39,7 @@ require(
 	],
 	function( Factory ){
 	
+	
 		// Create an instance of our factory. The factory is 
 		// responsible for creating new instances of the Person
 		// class with a certain amount of randomness.
@@ -49,7 +54,9 @@ require(
 		// match maker.
 		for (var i = 0 ; i < 10 ; i++){
 			
-			matchMaker.introduce( factory.createPerson() );
+			var randomPerson = factory.createPerson();
+			
+			matchMaker.introduce( randomPerson );
 			
 		}
 		
@@ -65,51 +72,6 @@ require(
 			
 		}
 		
+		
 	}
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
