@@ -29,25 +29,32 @@ define(
 		){
 	
 	
+		// I provide a central point for  "new" constructor calls.
 		function Factory(){
 			
+			// Create a list of men's names.
 			this._maleNames = new RandomAccessCollection( 
-				"Arnold", "Brett", "Byron", "Collin", "Dan", "Elton", "Isaac", 
-				"James", "Logan", "Louis", "Phil", "Rex", "Robert", "Spencer", 
-				"Sly", "Stan", "Vin", "Willy", "Zack" 
+				"Arnold", "Brett", "Byron", "Collin", "Dan", "Elton",
+				"Isaac", "James", "Logan", "Louis", "Phil", "Rex",
+				"Robert", "Spencer", "Sly", "Stan", "Vin", "Willy", 
+				"Zack" 
 			);
 			
+			// Create a list of women's names.
 			this._femaleNames = new RandomAccessCollection( 
-				"Adeline", "Alyson", "Amy", "Betsy", "Christina", "Hillary", 
-				"Joanna", "Kim", "Krysten", "Mallory", "Nicole", "Rebecka", 
-				"Sally", "Sarah", "Stacy", "Tricia", "Vanessa" 
+				"Adeline", "Alyson", "Amy", "Betsy", "Christina", 
+				"Hillary", "Joanna", "Kim", "Krysten", "Mallory", 
+				"Nicole", "Rebecka", "Sally", "Sarah", "Stacy", 
+				"Tricia", "Vanessa" 
 			);
 			
 		}
 		
 		
+		// Define the instance methods.
 		Factory.prototype = {
 			
+			// I create the blackbook used to collect people.
 			createBlackbook: function(){
 				
 				return( new Blackbook() );
@@ -55,6 +62,7 @@ define(
 			},
 			
 			
+			// I create the match maker.
 			createMatchMaker: function(){
 				
 				return(
@@ -64,8 +72,10 @@ define(
 			},
 			
 			
+			// I create a person with random characteristics.
 			createPerson: function(){
 				
+				// Distribute male/female creation.
 				if (Math.random() > .5){
 					
 					var name = this.getRandomMaleName();
@@ -86,6 +96,7 @@ define(
 			},
 			
 			
+			// I create a random gender preference.
 			createPreference: function(){
 				
 				var random = Math.random();
@@ -107,6 +118,7 @@ define(
 			},
 			
 			
+			// I create a random female Name instance.
 			getRandomFemaleName: function(){
 			
 				return(
@@ -116,6 +128,7 @@ define(
 			},
 			
 			
+			// I create a random male Name instance.
 			getRandomMaleName: function(){
 			
 				return(

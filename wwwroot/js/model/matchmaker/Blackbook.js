@@ -6,6 +6,8 @@ define(
 	],
 	function( Collection ){
 	
+	
+		// I represent a collection of single people
 		function Blackbook(){
 		
 			Collection.apply( this, arguments );
@@ -23,6 +25,7 @@ define(
 		
 		// Return constructor definition.
 		return( Blackbook );
+	
 	
 	}
 );

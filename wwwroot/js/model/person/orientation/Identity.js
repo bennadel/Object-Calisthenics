@@ -6,7 +6,8 @@ define(
 	
 	
 		// I model the gender identity for a person. The core values
-		// are Male and Female; however, non-core values are possible.
+		// are Male and Female; however, non-core values are possible
+		// through polymorphism.
 		function Identity(){
 			// ...
 		}
@@ -27,6 +28,7 @@ define(
 			// I determine if the identity represents female.
 			isFemale: function(){
 				
+				// This will only be true in sub-classed methods.
 				return( false );
 				
 			},
@@ -35,6 +37,7 @@ define(
 			// I determine if the identity represents male.
 			isMale: function(){
 				
+				// This will only be true in sub-classed methods.
 				return( false );
 				
 			}

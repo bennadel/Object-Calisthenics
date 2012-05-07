@@ -5,22 +5,31 @@ define(
 	function(){
 	
 	
+		// I represent a gender preference.
 		function Preference(){
 			// ...
 		}
 		
 		
-		Preference.prototype.abbreviation = function(){
+		// Define the instance methods.
+		Preference.prototype = {
+
+			// I return the abbreviated representation.
+			abbreviation: function(){
 		
-			throw( new Error( "AbstractMethod" ) );
+				throw( new Error( "AbstractMethod" ) );
+			
+			},
+			
+			
+			// I determine whether or not the given person satisfies
+			// the underlying gender preference.
+			prefers: function( person ){
 		
-		};
-		
-		
-		Preference.prototype.prefers = function( person ){
-		
-			throw( new Error( "AbstractMethod" ) );
-		
+				throw( new Error( "AbstractMethod" ) );
+			
+			}
+
 		};
 		
 		

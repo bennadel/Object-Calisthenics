@@ -7,6 +7,8 @@ define(
 	function( Preference ){
 	
 	
+		// I represent a non-specific attraction to gender. That is, 
+		// I am attracted to both Male and Female genders.
 		function NonPreference(){
 		
 			// Invoke super constructor logic.
@@ -14,10 +16,12 @@ define(
 		
 		}
 		
+		
 		// Extend Identity.
-		NonPreference.prototype = Object.create( Preference ); 
+		NonPreference.prototype = Object.create( Preference.prototype ); 
 		
 		
+		// I return the abbreviated representation.		
 		NonPreference.prototype.abbreviation = function(){
 
 			return( "M/F" );
@@ -25,9 +29,12 @@ define(
 		};
 		
 		
+		// I flag whether or not the given person satisfys the 
+		// underlying preference.
 		NonPreference.prototype.prefers = function( person ){
 			
-			// Gender is irrelevant.
+			// Since this preference is not gender-specific, we can
+			// return true without checking the given person.
 			return( true );
 			
 		}

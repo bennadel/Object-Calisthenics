@@ -4,6 +4,8 @@ define(
 	[],
 	function(){
 	
+	
+		// I model the gender identity and preference of a person.
 		function Orientation( identity, prefrence ){
 		
 			this._identity = identity;
@@ -12,8 +14,11 @@ define(
 		}
 		
 		
+		// Define the instance methods.
 		Orientation.prototype = {
 			
+			// I return the abbreviated representation of the gender
+			// identity and preference (ex. F<=>M).
 			getAbbreviation: function(){
 				
 				return(
@@ -25,6 +30,9 @@ define(
 			},
 			
 			
+			// I flag whether or not this orientation would be 
+			// attracted to the given person (based on gender
+			// preference).
 			isAttractedTo: function( person ){
 			
 				return(
@@ -34,6 +42,9 @@ define(
 			},
 			
 			
+			// I flag whether or not the orientation identifies as 
+			// Female. While the underlying identity can be fluid, we
+			// want to provide easy access to the two primary genders.
 			identifiesAsFemale: function(){
 
 				return( this._identity.isFemale() );
@@ -41,6 +52,9 @@ define(
 			},
 			
 			
+			// I flag whether or not the orientation identifies as 
+			// Male. While the underlying identity can be fluid, we
+			// want to provide easy access to the two primary genders.
 			identifiesAsMale: function(){
 
 				return( this._identity.isMale() );

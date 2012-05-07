@@ -7,7 +7,7 @@ if (!Object.hasOwnProperty( "create" )){
 		
 		var Connector = function(){};
 		
-		Connector.prototype = superClass();
+		Connector.prototype = superClass;
 		
 		return( new Connector() );
 		
@@ -35,18 +35,30 @@ require(
 	],
 	function( Factory ){
 	
+		// Create an instance of our factory. The factory is 
+		// responsible for creating new instances of the Person
+		// class with a certain amount of randomness.
 		var factory = new Factory();
 		
+		// Create our match maker - this is the domain entity that
+		// will come up with pairings of people who may have a 
+		// successful relationship.
 		var matchMaker = factory.createMatchMaker();
 		
+		// Create a number of people and "introduce" them to the 
+		// match maker.
 		for (var i = 0 ; i < 10 ; i++){
 			
 			matchMaker.introduce( factory.createPerson() );
 			
 		}
 		
+		// Now that we have introduced a number of people to the 
+		// match maker, ask the match maker to suggest matches that
+		// might lead to viable relationships.
 		var matches = matchMaker.suggestMatches();
 		
+		// Output the suggested matches.
 		for (var i = 0 ; i < matches.size() ; i++){
 			
 			console.log( matches.toString( i ) );

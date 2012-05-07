@@ -8,6 +8,9 @@ define(
 	function( MatchCollection, Match ){
 	
 	
+		// I represent the match maker that will provide logic for 
+		// aggregating and finding possible relationships between
+		// single people.
 		function MatchMaker( blackbook ){
 		
 			this._blackbook = blackbook;
@@ -15,8 +18,10 @@ define(
 		}
 		
 		
+		// Define the instance methods.
 		MatchMaker.prototype = {
 			
+			// Intoduce a single person to the match maker.
 			introduce: function( person ){
 			
 				this._blackbook.push( person );
@@ -24,8 +29,13 @@ define(
 			},
 			
 			
+			// I gather all the possible matches for the given 
+			// person based on combination (cross-product) rather 
+			// than attraction. 
 			gatherMatches: function( person, matches ){
 				
+				// Gather all the people in the Blackbook who are not
+				// the given person (ie. all possible combinations).
 				for (var i = 0 ; i < this._blackbook.size() ; i++){
 					
 					var possibleMatch = this._blackbook.get( i );
@@ -43,10 +53,13 @@ define(
 			},
 			
 			
+			// I suggest all possible matches for all people that
+			// have been introduced to the match maker. 
 			suggestMatches: function(){
 				
 				var matches = new MatchCollection();
 				
+				// Gather all possible combinations.
 				for (var i = 0 ; i < this._blackbook.size() ; i++){
 					
 					this.gatherMatches(
@@ -56,6 +69,8 @@ define(
 					
 				}
 				
+				// Remove any combinations that don't seem likely
+				// to lead to a relationship.
 				matches.removeBadMatches();
 				
 				return( matches );
