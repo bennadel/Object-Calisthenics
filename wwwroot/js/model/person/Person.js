@@ -1,11 +1,8 @@
 
-// Define class requirments and cosntructor.
+// Define class requirments and constructor.
 define(
-	[ 
-		"model/person/orientation/FemaleIdentity",
-		"model/person/orientation/MaleIdentity"
-	],
-	function( FemaleIdentity, MaleIdentity ){
+	[],
+	function(){
 	
 	
 		function Person( name, orientation ){
@@ -38,18 +35,14 @@ define(
 			
 			isFemale: function(){
 			
-				return(
-					this._orientation.identifiesAs( FemaleIdentity )
-				);
+				return( this._orientation.identifiesAsFemale() );
 			
 			},
 			
 			
 			isMale: function(){
 			
-				return(
-					this._orientation.identifiesAs( MaleIdentity )
-				);
+				return( this._orientation.identifiesAsMale() );
 			
 			},
 			

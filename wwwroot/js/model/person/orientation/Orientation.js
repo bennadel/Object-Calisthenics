@@ -1,5 +1,5 @@
 
-// Define class requirments and cosntructor.
+// Define class requirments and constructor.
 define(
 	[],
 	function(){
@@ -34,9 +34,16 @@ define(
 			},
 			
 			
-			identifiesAs: function( Identity ){
+			identifiesAsFemale: function(){
 
-				return( this._identity instanceof Identity );
+				return( this._identity.isFemale() );
+				
+			},
+			
+			
+			identifiesAsMale: function(){
+
+				return( this._identity.isMale() );
 				
 			}
 			

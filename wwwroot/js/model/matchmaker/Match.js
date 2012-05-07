@@ -1,5 +1,5 @@
 
-// Define class requirments and cosntructor.
+// Define class requirments and constructor.
 define(
 	[],
 	function(){

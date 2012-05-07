@@ -1,5 +1,5 @@
 
-// Define class requirments and cosntructor.
+// Define class requirments and constructor.
 define(
 	[
 		"model/person/orientation/Identity"
@@ -7,6 +7,7 @@ define(
 	function( Identity ){
 	
 	
+		// I model the male gender identity.
 		function MaleIdentity(){
 		
 			// Invoke super constructor logic.
@@ -14,13 +15,24 @@ define(
 		
 		}
 		
+		
 		// Extend Identity.
-		MaleIdentity.prototype = Object.create( Identity ); 
+		MaleIdentity.prototype = Object.create( Identity.prototype ); 
 		
 		
+		// I return the abbreviated representation.
 		MaleIdentity.prototype.abbreviation = function(){
 			
 			return( "M" );
+			
+		};
+		
+		
+		// I flag that this identity represents the general 
+		// understanding of the male gender.
+		MaleIdentity.prototype.isMale = function(){
+			
+			return( true );
 			
 		};
 		
